@@ -1,0 +1,207 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > StockPurchased</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">coms309.Stocks</a>
+</div>
+
+<h1>Coverage Summary for Class: StockPurchased (coms309.Stocks)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StockPurchased</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.3%
+  </span>
+  <span class="absValue">
+    (14/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    74.1%
+  </span>
+  <span class="absValue">
+    (20/27)
+  </span>
+</td>
+</tr>
+  <tr>
+<<<<<<< HEAD
+    <td class="name">StockPurchased$HibernateProxy$0kfNf5n8</td>
+=======
+    <td class="name">StockPurchased$HibernateProxy$3FgemBy8</td>
+>>>>>>> 37788713f101c7e50bf78a985359de9334d5ca1f
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    93.3%
+  </span>
+  <span class="absValue">
+    (14/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    74.1%
+  </span>
+  <span class="absValue">
+    (20/27)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package coms309.Stocks;
+&nbsp;
+&nbsp;import coms309.Users.User;
+&nbsp;
+&nbsp;import java.time.LocalDateTime;
+&nbsp;
+&nbsp;import javax.persistence.*;
+&nbsp;
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;stock_purchased&quot;)
+&nbsp;public class StockPurchased {
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+&nbsp;    private Long id;
+&nbsp;
+&nbsp;    @ManyToOne
+&nbsp;    @JoinColumn(name = &quot;user_id&quot;)
+&nbsp;    private User user;
+&nbsp;
+&nbsp;    @ManyToOne
+&nbsp;    @JoinColumn(name = &quot;stock_id&quot;)
+&nbsp;    private Stock stock;
+&nbsp;
+&nbsp;    @Column(name = &quot;amount_purchased&quot;)
+&nbsp;    private int numPurchased;
+&nbsp;
+&nbsp;    @Column(name = &quot;cost_of_purchased&quot;)
+&nbsp;    private double costPurchase;
+&nbsp;
+&nbsp;    @Column(name = &quot;price_of_one_at_purchase&quot;)
+&nbsp;    private double singlePrice;
+&nbsp;
+<b class="fc">&nbsp;    public StockPurchased(){</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public User getUser(){return user;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public void setUser(User user){this.user = user;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public Stock getStock(){return stock;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public void setStock(Stock stock){this.stock = stock;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public Long getId(){return id;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public int getNumPurchased(){return numPurchased;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public void setNumPurchased(int numPurchased){this.numPurchased = numPurchased;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public double getCostPurchase() {return costPurchase;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public void setCostPurchase(double costPurchase){this.costPurchase = costPurchase;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public void setId(Long id){this.id = id;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public double getSinglePrice(){return singlePrice;}</b>
+<b class="fc">&nbsp;    public void setSinglePrice(double singlePrice){this.singlePrice = singlePrice;}</b>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int hashCode() {
+<b class="nc">&nbsp;        final int prime = 31;</b>
+<b class="nc">&nbsp;        int result = 1;</b>
+<b class="nc">&nbsp;        result = prime * result + ((id == null) ? 0 : id.hashCode());</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean equals(Object obj) {
+<b class="fc">&nbsp;        if (this == obj)</b>
+<b class="fc">&nbsp;            return true;</b>
+<b class="fc">&nbsp;        if (obj == null)</b>
+<b class="nc">&nbsp;            return false;</b>
+<b class="fc">&nbsp;        if (getClass() != obj.getClass())</b>
+<b class="nc">&nbsp;            return false;</b>
+<b class="fc">&nbsp;        StockPurchased other = (StockPurchased) obj;</b>
+<b class="fc">&nbsp;        if (id == null) {</b>
+<b class="nc">&nbsp;            return other.id == null;</b>
+<b class="fc">&nbsp;        } else return id.equals(other.id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+<<<<<<< HEAD
+    <div style="float:right;">generated on 2023-12-03 13:40</div>
+=======
+    <div style="float:right;">generated on 2023-12-03 13:37</div>
+>>>>>>> 37788713f101c7e50bf78a985359de9334d5ca1f
+</div>
+</body>
+</html>

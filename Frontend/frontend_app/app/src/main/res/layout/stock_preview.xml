@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+>
+
+    <TextView
+        android:id="@+id/StockPage_title"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="408dp"
+        android:layout_height="143dp"
+        android:background="@color/darkBack"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_medium"
+        android:inputType="text"
+        android:singleLine="false"
+        android:text="Stock Preview"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#dcf8c6"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.006" />
+
+    <Button
+        android:id="@+id/toHome_btn"
+        android:layout_width="103dp"
+        android:layout_height="57dp"
+        android:text="Home"
+        android:textColor="@color/txtclr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.899" />
+</androidx.constraintlayout.widget.ConstraintLayout>

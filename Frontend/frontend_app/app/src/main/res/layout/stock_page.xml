@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout_stock"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.GroupPage"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background_gradient"
+    tools:openDrawer="start">
+
+<com.google.android.material.navigation.NavigationView
+    android:id="@+id/nav_view_stock"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/header"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:menu="@menu/main_menu" />
+
+<androidx.appcompat.widget.Toolbar
+android:id="@+id/toolbar"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:background="#00008577"
+android:minHeight="?attr/actionBarSize"
+android:theme="?attr/actionBarTheme"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:navigationIcon="@drawable/navigation_icon" />
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/stockID_view"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="ID: 0"
+        android:textColor="@color/darkBack"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/stockImageImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockNameTextView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/stockPage_title"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:inputType="text"
+        android:text="Stocks"
+        android:textColor="@color/txtclr"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--    <Button-->
+<!--        android:id="@+id/delete_StockPagebtn"-->
+<!--        android:layout_width="103dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:backgroundTint="@color/red"-->
+<!--        android:text="Delete"-->
+<!--        android:textColor="@color/txtclr"-->
+
+<!--        app:layout_constraintBottom_toTopOf="@+id/priceChangeCard"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.847"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/sell_StockPagebtn"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/stockImageImageView"-->
+<!--        app:layout_constraintVertical_bias="0.333" />-->
+
+    <TextView
+        android:id="@+id/stockNameTextView"
+        android:layout_width="220dp"
+        android:layout_height="83dp"
+        android:layout_margin="10dp"
+        android:text="Current Stock Name"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/stockImageImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockPage_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/stockImageImageView"
+        android:layout_width="322dp"
+        android:layout_height="182dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="175dp"
+        android:background="#FFFDFD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/notesEditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="text"
+        android:lineSpacingExtra="8sp"
+        android:text="Notes: "
+        android:textSize="12sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <!--    <Button-->
+<!--        android:id="@+id/sell_StockPagebtn"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:backgroundTint="@color/navy_bg"-->
+<!--        android:text="Sell"-->
+<!--        android:textColor="@color/txtclr"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.371"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/stockPage_title"-->
+<!--        app:layout_constraintVertical_bias="0.48" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/buy_StockPagebtn"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:backgroundTint="@color/navy_bg"-->
+<!--        android:text="Buy"-->
+<!--        android:textColor="@color/txtclr"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.048"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.53" />-->
+
+    <TextView
+        android:id="@+id/symbol_StockPage"
+        android:layout_width="92dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Symbol"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <Button
+        android:id="@+id/prev_StockPageBtn"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/navy_bg"
+        android:text="Prev"
+        android:textColor="@color/txtclr"
+        app:layout_constraintBottom_toTopOf="@+id/stockImageImageView"
+        app:layout_constraintEnd_toStartOf="@+id/stockNameTextView"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockPage_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/next_StockPageBtn"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/navy_bg"
+        android:text="Next"
+        android:textColor="@color/txtclr"
+        app:layout_constraintBottom_toTopOf="@+id/stockImageImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/stockNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/stockPage_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+<!--    <Button-->
+<!--        android:id="@+id/back_StockPageBtn"-->
+<!--        android:layout_width="120dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:backgroundTint="@color/background"-->
+<!--        android:text="Back"-->
+<!--        android:textColor="@color/txtclr"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/stockPage_title"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.034"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.382" />-->
+
+    <Button
+        android:id="@+id/createStock_StockPageBtn"
+        android:layout_width="123dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/background"
+        android:text="New Stock"
+        android:textColor="@color/txtclr"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/stockPage_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="@+id/stockPage_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/priceChangeCard"
+        android:layout_width="370dp"
+        android:layout_height="140dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="10dp"
+        app:cardBackgroundColor="@color/material_dynamic_primary30"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+
+        app:layout_constraintBottom_toTopOf="@+id/notesEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockImageImageView"
+        app:layout_constraintVertical_bias="0.105">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/stockPrice_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Current Price"
+                android:textAlignment="center"
+                android:textColor="@color/txtclr"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/stockPrice_Display"
+                app:layout_constraintEnd_toStartOf="@+id/stockChange_title"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <EditText
+                android:id="@+id/stockPrice_Display"
+                android:layout_width="76dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="32dp"
+                android:inputType="text"
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/txtclr"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/stockChange_txt"
+                app:layout_constraintHorizontal_bias="0.553"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/stockChange_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="20dp"
+                android:text="Price Change"
+                android:textAlignment="center"
+                android:textColor="@color/txtclr"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/stockChange_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.511"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.173"></TextView>
+
+            <TextView
+                android:id="@+id/stockChange_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="-$0.67 || -%20"
+                android:textAlignment="center"
+                android:textColor="@color/txtclr"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.6"></TextView>
+
+            <ImageView
+                android:id="@+id/stock_ImageView"
+                android:layout_width="78dp"
+                android:layout_height="73dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.945"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.358"
+                app:srcCompat="@drawable/greenarrow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/toNews_btn"
+        android:layout_width="161dp"
+        android:layout_height="64dp"
+        android:text="Recent Articles"
+        app:layout_constraintBottom_toTopOf="@+id/notesEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceChangeCard"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <Button
+        android:id="@+id/toHistory_btn"
+        android:layout_width="160dp"
+        android:layout_height="64dp"
+        android:text="Weekly Price History"
+        app:layout_constraintBottom_toTopOf="@+id/notesEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceChangeCard"
+        app:layout_constraintVertical_bias="0.517" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

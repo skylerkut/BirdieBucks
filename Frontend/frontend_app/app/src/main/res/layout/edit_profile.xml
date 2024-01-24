@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_gradient">
+
+    <TextView
+        android:id="@+id/editProfile_title"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/darkBack"
+        android:ems="10"
+        android:text="Profile"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textColor="@color/txtclr"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/EbackProfile_btn"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/background"
+        android:text="Back"
+        android:textColor="@color/txtclr"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/editProfile_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382"  />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/picSample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editProfile_title"
+        app:layout_constraintVertical_bias="0.023"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        app:strokeColor="@android:color/black"
+        app:strokeWidth="1dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/EuserCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="76dp"
+        android:paddingBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toTopOf="@+id/EpasswordCard"
+        app:layout_constraintTop_toBottomOf="@+id/picSample"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="16dp">
+
+        <TextView
+            android:id="@+id/Eusername_txtView"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Username"
+            android:textSize="17sp"
+            android:textStyle="italic|bold"></TextView>
+
+        <EditText
+            android:id="@+id/Eusername_Display"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:text="Not Found"
+            android:textSize="18sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/EpasswordCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picSample"
+        app:layout_constraintVertical_bias="0.266">
+
+        <TextView
+            android:id="@+id/Epassword_txtView"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Password"
+            android:textSize="17sp"
+            android:textStyle="italic|bold"></TextView>
+
+        <EditText
+            android:id="@+id/Epassword_Display"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:text="Not Found"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/EemailCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingBottom="10dp"
+
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EpasswordCard">
+
+
+        <EditText
+            android:id="@+id/Eemail_Display"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:text="Not Found"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Eemail_txtView"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Email"
+            android:textSize="17sp"
+            android:textStyle="italic|bold"></TextView>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/EdobCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EemailCard"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/Edob_txtView"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Birthday"
+            android:textSize="17sp"
+            android:textStyle="italic|bold"></TextView>
+
+        <EditText
+            android:id="@+id/Edob_Display"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:text="Not Found"
+            android:inputType="text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/saveProfile_btn"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/background"
+        android:text="Save"
+        android:textColor="@color/txtclr"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/editProfile_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toEndOf="@+id/EbackProfile_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382" />
+
+    <EditText
+        android:id="@+id/Ewelcome_txtView"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Name Not Found"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/txtclr"
+        android:textStyle="bold|italic"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/EuserCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picSample"
+        app:layout_constraintVertical_bias="0.444" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/EmoneyCard"
+        android:layout_width="192dp"
+        android:layout_height="104dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:cardBackgroundColor="@color/material_dynamic_primary30"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/EstockCard"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.858">
+
+        <TextView
+            android:id="@+id/Emoney_view"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="top|center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Cash"
+            android:textAlignment="center"
+            android:textColor="@color/txtclr"
+            android:textSize="17sp"
+            android:textStyle="bold"></TextView>
+
+        <EditText
+            android:id="@+id/Emoney_Display"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_margin="25dp"
+            android:inputType="text"
+            android:text="10"
+            android:textAlignment="center"
+            android:textColor="@color/txtclr"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <Button-->
+<!--        android:id="@+id/toStockPage_btn"-->
+<!--        android:layout_width="129dp"-->
+<!--        android:layout_height="64dp"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="My Stocks"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.976" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/EstockCard"
+        android:layout_width="130dp"
+        android:layout_height="104dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:cardBackgroundColor="@color/material_dynamic_primary30"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.861">
+
+        <TextView
+            android:id="@+id/Estock_view"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="top|center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Stocks"
+            android:textAlignment="center"
+            android:textColor="@color/txtclr"
+            android:textSize="17sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/Estock_Display"
+            android:layout_width="80dp"
+            android:layout_height="63dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="10dp"
+            android:text="VIEW STOCKS TO EDIT"
+            android:textAlignment="center"
+            android:textColor="@color/txtclr"
+            android:textSize="15sp" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

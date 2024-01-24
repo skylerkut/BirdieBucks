@@ -1,0 +1,93 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+<<<<<<< HEAD
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+=======
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+>>>>>>> 37788713f101c7e50bf78a985359de9334d5ca1f
+  <title>Coverage Report > UserRepository</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">coms309.Users</a>
+</div>
+
+<h1>Coverage Summary for Class: UserRepository (coms309.Users)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">UserRepository</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package coms309.Users;
+&nbsp;
+&nbsp;import org.springframework.data.jpa.repository.JpaRepository;
+&nbsp;import org.springframework.transaction.annotation.Transactional;
+&nbsp;
+&nbsp;public interface UserRepository extends JpaRepository&lt;User, Long&gt;{
+&nbsp;    User findById(long id);
+&nbsp;//
+&nbsp;//    void deleteById(int id);
+&nbsp;//
+&nbsp;//    void deleteByName(String name);
+&nbsp;//
+&nbsp;//    User findByStockId(int id);
+&nbsp;//
+&nbsp;    User findByUsername(String username);
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+<<<<<<< HEAD
+    <div style="float:right;">generated on 2023-12-03 13:40</div>
+=======
+    <div style="float:right;">generated on 2023-12-03 13:37</div>
+>>>>>>> 37788713f101c7e50bf78a985359de9334d5ca1f
+</div>
+</body>
+</html>

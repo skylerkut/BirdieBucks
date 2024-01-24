@@ -1,0 +1,333 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+<<<<<<< HEAD
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+=======
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+>>>>>>> 37788713f101c7e50bf78a985359de9334d5ca1f
+  <title>Coverage Report > User</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">coms309.Users</a>
+</div>
+
+<h1>Coverage Summary for Class: User (coms309.Users)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">User</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (21/28)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    68.3%
+  </span>
+  <span class="absValue">
+    (56/82)
+  </span>
+</td>
+</tr>
+  <tr>
+<<<<<<< HEAD
+    <td class="name">User$HibernateProxy$pwU9gxYy</td>
+=======
+    <td class="name">User$HibernateProxy$9fXb2Cwf</td>
+>>>>>>> 37788713f101c7e50bf78a985359de9334d5ca1f
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (21/28)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    68.3%
+  </span>
+  <span class="absValue">
+    (56/82)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package coms309.Users;
+&nbsp;
+&nbsp;import javax.persistence.CascadeType;
+&nbsp;import javax.persistence.Entity;
+&nbsp;import javax.persistence.GeneratedValue;
+&nbsp;import javax.persistence.GenerationType;
+&nbsp;import javax.persistence.Id;
+&nbsp;import javax.persistence.JoinColumn;
+&nbsp;import javax.persistence.OneToOne;
+&nbsp;import javax.persistence.ManyToOne;
+&nbsp;
+&nbsp;import javax.persistence.*;
+&nbsp;
+&nbsp;
+&nbsp;import com.fasterxml.jackson.annotation.JsonIgnore;
+&nbsp;import coms309.Stocks.Stock;
+&nbsp;import coms309.Stocks.StockPurchased;
+&nbsp;import coms309.Stocks.StockPurchasedRepository;
+&nbsp;
+&nbsp;import java.util.*;
+&nbsp;
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;user&quot;)
+&nbsp;public class User {
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @Column(name = &quot;id&quot;)
+&nbsp;    private Long id;
+&nbsp;
+&nbsp;    @Column(name = &quot;money&quot;)
+&nbsp;    private double money;
+&nbsp;
+<b class="fc">&nbsp;    @JsonIgnore</b>
+&nbsp;    @OneToMany(mappedBy = &quot;user&quot;)
+&nbsp;    private List&lt;StockPurchased&gt; stocks = new ArrayList&lt;&gt;();
+&nbsp;
+&nbsp;    @Column(name = &quot;name&quot;)
+&nbsp;    private String name;
+&nbsp;
+&nbsp;    @Column(name = &quot;email&quot;)
+&nbsp;    private String email;
+&nbsp;
+&nbsp;    @Column(name = &quot;date_of_birth&quot;)
+&nbsp;    private String dob;
+&nbsp;
+&nbsp;    @Column(name = &quot;username&quot;)
+&nbsp;    private String username;
+&nbsp;
+&nbsp;    @Column(name = &quot;password&quot;)
+&nbsp;    private String password;
+&nbsp;
+&nbsp;    @Column(name = &quot;privilege&quot;)
+&nbsp;    private char privilege;
+&nbsp;
+&nbsp;
+&nbsp;    @ManyToOne
+&nbsp;    @JoinColumn(name = &quot;friend_group_id&quot;)
+&nbsp;    private FriendGroup friendGroup;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    public User(Long id, double money, String name, String email, String dob, String username, String password){</b>
+&nbsp;
+<b class="fc">&nbsp;        this.id = id;</b>
+<b class="fc">&nbsp;        this.money = money;</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.email = email;</b>
+<b class="fc">&nbsp;        this.dob = dob;</b>
+<b class="fc">&nbsp;        this.username = username;</b>
+<b class="fc">&nbsp;        this.password = password;</b>
+<b class="fc">&nbsp;        this.privilege = &#39;u&#39;;</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public User(){}</b>
+&nbsp;
+&nbsp;    public Long getId(){
+<b class="fc">&nbsp;        return id;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setId(Long id){
+<b class="nc">&nbsp;        this.id = id;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setFriendGroup(FriendGroup group){
+<b class="fc">&nbsp;        this.friendGroup = group;</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public FriendGroup getFriendGroup(){return friendGroup;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public double getMoney(){return money;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public int getNumStocksPurchased(){return stocks.size() - 1;}</b>
+&nbsp;
+<b class="nc">&nbsp;    public void setMoney(double money){this.money = money;}</b>
+&nbsp;
+&nbsp;    public String getName(){
+<b class="fc">&nbsp;        return name;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setName(String name){
+<b class="nc">&nbsp;        this.name = name;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEmail(){
+<b class="fc">&nbsp;        return email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEmail(String email){
+<b class="nc">&nbsp;        this.email = email;</b>
+&nbsp;    }
+<b class="fc">&nbsp;    public String getUsername() {return username;}</b>
+&nbsp;    public void setUsername(String user){
+<b class="nc">&nbsp;        this.username = user;</b>
+&nbsp;    }
+<b class="fc">&nbsp;    public String getPassword() {return password;}</b>
+<b class="nc">&nbsp;    public void setPassword(String pass){this.password = pass;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public char getPrivilege(){return privilege;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public void setPrivilege(char privilege){this.privilege = privilege;}</b>
+&nbsp;
+<b class="fc">&nbsp;    public String getDob(){return dob;}</b>
+&nbsp;
+<b class="nc">&nbsp;    public void setDob(String dob){this.dob = dob;}</b>
+&nbsp;
+&nbsp;    public StockPurchased setStock(Stock stock, int numPurchase, Long id){
+<b class="fc">&nbsp;        for(int i = 0; i &lt;  stocks.size(); ++i){</b>
+<b class="fc">&nbsp;            if(stock.getId().equals(stocks.get(i).getStock().getId()) &amp;&amp; money &gt;= numPurchase * stock.getCurrValue()){</b>
+<b class="nc">&nbsp;                StockPurchased toRemove = stocks.get(i);</b>
+<b class="nc">&nbsp;                stocks.get(i).setNumPurchased(stocks.get(i).getNumPurchased() + numPurchase);</b>
+<b class="nc">&nbsp;                stocks.get(i).setCostPurchase(stocks.get(i).getCostPurchase() + stocks.get(i).getStock().getCurrValue() * numPurchase);</b>
+<b class="nc">&nbsp;                return toRemove;</b>
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        StockPurchased curr = new StockPurchased();</b>
+<b class="fc">&nbsp;        curr.setStock(stock);</b>
+<b class="fc">&nbsp;        curr.setUser(this);</b>
+<b class="fc">&nbsp;        curr.setId(id);</b>
+<b class="fc">&nbsp;        curr.setNumPurchased(numPurchase);</b>
+<b class="fc">&nbsp;        curr.setSinglePrice(stock.getCurrValue());</b>
+<b class="fc">&nbsp;        curr.setCostPurchase(curr.getNumPurchased() * stock.getCurrValue());</b>
+<b class="fc">&nbsp;        if( curr.getNumPurchased() * stock.getCurrValue() &gt; money) return null;</b>
+<b class="fc">&nbsp;        stocks.add(curr);</b>
+<b class="fc">&nbsp;        stock.setUser(this, numPurchase, id);</b>
+<b class="fc">&nbsp;        money -= curr.getCostPurchase();</b>
+<b class="fc">&nbsp;        return curr;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //returns the amount of money that was gained from selling if it was 0, either the user doesn&#39;t have any or wasn&#39;t found
+&nbsp;    public StockPurchased removeStocks(int numStocks, Stock stock){
+&nbsp;        StockPurchased potentiallyRemoved;
+<b class="fc">&nbsp;        for(int i = 0; i &lt; stocks.size(); ++i){</b>
+<b class="fc">&nbsp;            if(stock.getId().equals(stocks.get(i).getStock().getId())){</b>
+<b class="fc">&nbsp;                if(numStocks &gt;= stocks.get(i).getNumPurchased()){</b>
+<b class="fc">&nbsp;                    double moneyChanged = stocks.get(i).getCostPurchase();</b>
+<b class="fc">&nbsp;                    money += moneyChanged;</b>
+<b class="fc">&nbsp;                    potentiallyRemoved = stocks.get(i);</b>
+<b class="fc">&nbsp;                    stocks.remove(stocks.get(i));</b>
+<b class="fc">&nbsp;                    return potentiallyRemoved;</b>
+&nbsp;                }else{
+<b class="nc">&nbsp;                    double moneyChanged = stocks.get(i).getSinglePrice() * numStocks;</b>
+<b class="nc">&nbsp;                    money += moneyChanged;</b>
+<b class="nc">&nbsp;                    potentiallyRemoved = stocks.get(i);</b>
+<b class="nc">&nbsp;                    stocks.get(i).setNumPurchased(stocks.get(i).getNumPurchased() - numStocks);</b>
+<b class="nc">&nbsp;                    stocks.get(i).setCostPurchase(stocks.get(i).getCostPurchase() - numStocks * stocks.get(i).getSinglePrice());</b>
+<b class="nc">&nbsp;                    return potentiallyRemoved;</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    public List&lt;StockPurchased&gt; getStocks(){return stocks;}</b>
+&nbsp;
+&nbsp;    public StockPurchased purchase(int numStocks, Stock stock, long id){
+<b class="fc">&nbsp;        if(numStocks &lt; 1 || stock == null) return null;</b>
+<b class="fc">&nbsp;        return setStock(stock, numStocks, id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public StockPurchased sell(int numStocks, Stock stock){
+<b class="fc">&nbsp;        if(numStocks &lt; 1 || stock == null) return null;</b>
+<b class="fc">&nbsp;        return removeStocks(numStocks, stock);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int hashCode() {
+<b class="fc">&nbsp;        final int prime = 31;</b>
+<b class="fc">&nbsp;        int result = 1;</b>
+<b class="fc">&nbsp;        result = (int) (prime * result + ((id == null) ? 0 : id));</b>
+<b class="fc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean equals(Object obj) {
+<b class="fc">&nbsp;        if (this == obj)</b>
+<b class="fc">&nbsp;            return true;</b>
+<b class="nc">&nbsp;        if (obj == null)</b>
+<b class="nc">&nbsp;            return false;</b>
+<b class="nc">&nbsp;        if (getClass() != obj.getClass())</b>
+<b class="nc">&nbsp;            return false;</b>
+<b class="nc">&nbsp;        User other = (User) obj;</b>
+<b class="nc">&nbsp;        if (id == null) {</b>
+<b class="nc">&nbsp;            return other.id == null;</b>
+<b class="nc">&nbsp;        } else return id.equals(other.id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+<<<<<<< HEAD
+    <div style="float:right;">generated on 2023-12-03 13:40</div>
+=======
+    <div style="float:right;">generated on 2023-12-03 13:37</div>
+>>>>>>> 37788713f101c7e50bf78a985359de9334d5ca1f
+</div>
+</body>
+</html>
